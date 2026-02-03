@@ -12,7 +12,7 @@ MAX_OPS = 100
 class PrintBuffer:
     ops: list[tuple[str, Any]] = field(default_factory=list)
 
-    def _append(self, op, arg):
+    def _append(self, op: str, arg: Any) -> None:
         if len(self.ops) >= MAX_OPS:
             raise ValueError("too many print operations")
         self.ops.append((op, arg))
@@ -25,15 +25,15 @@ class PrintBuffer:
         s = "" if value is None else str(value)
         if len(s) > 4000:
             raise ValueError("text too long")
-        self.ops.append(("text", s))
+        self._append("text", s)
         return self
 
     def feed(self, n: int = 1) -> PrintBuffer:
         if not isinstance(n, int) or not (0 <= n <= 50):
             raise ValueError("feed must be int in [0..50]")
-        self.ops.append(("ln", n))
+        self._append("ln", n)
         return self
 
     def cut(self) -> PrintBuffer:
-        self.ops.append(("cut", None))
+        self._append("cut", None)
         return self
