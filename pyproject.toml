@@ -1,0 +1,33 @@
+[project]
+name = "Tlacuilo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+  "fastapi[standard]>=0.128.0",
+  "python-escpos[serial,usb]>=3.1",
+]
+
+[project.scripts]
+tlacuilo = "tlacuilo.api.routes:main"
+
+[dependency-groups]
+dev = [
+  "pytest>=9.0.2",
+  "pytest-cov>=7.0.0",
+  "ruff>=0.14.14",
+  "ty>=0.0.14",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.28,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.ruff.lint]
+extend-select = ["B", "S", "SIM", "T20", "C901"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101"]
+
+[tool.ruff.format]
