@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
   "fastapi[standard]>=0.128.0",
+  "python-dotenv>=1.2.1",
   "python-escpos[serial,usb]>=3.1",
 ]
 
@@ -26,7 +27,7 @@ requires = ["uv_build>=0.9.28,<0.10.0"]
 build-backend = "uv_build"
 
 [tool.ruff.lint]
-ignore = ["S701"]
+ignore = ["S701", "S104", "E722"]
 extend-select = ["B", "S", "SIM", "T20", "C901"]
 fixable = ["ALL"]
 unfixable = []
