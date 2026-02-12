@@ -1,3 +1,12 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json"
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:recommended",
+        ":disableRateLimiting",
+        ":dependencyDashboard",
+        ":enablePreCommit",
+        ":pinDependencies"
+    ],
+    "prCreation": "immediate",
+    "rebaseWhen": "conflicted"
 }

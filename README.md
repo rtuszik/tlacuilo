@@ -50,3 +50,19 @@ ASCII art text. Returns string.
 {{ p.text(figlet("TODO")) }}
 {{ p.text(figlet("HI", "banner")) }}
 ```
+
+---
+
+## Development
+
+```
+brew bundle
+```
+
+```
+prek install
+```
+
+```
+uv sync --locked
+```
