@@ -6,6 +6,7 @@ from typing import Any
 
 from jinja2 import FileSystemLoader
 from jinja2.sandbox import SandboxedEnvironment
+from pyfiglet import figlet_format
 
 from tlacuilo.printer.buffer import PrintBuffer
 
@@ -16,6 +17,10 @@ def _safe_template_name(name: str) -> str:
     if not name.endswith(".j2"):
         raise ValueError("template must end with .j2")
     return name
+
+
+def _figlet(text: str, font: str = "small") -> str:
+    return figlet_format(text, font=font)
 
 
 def render_template_to_ops(
@@ -35,7 +40,7 @@ def render_template_to_ops(
     )
 
     buf = PrintBuffer()
-    env.get_template(template_name).render(p=buf, **context)
+    env.get_template(template_name).render(p=buf, figlet=_figlet, **context)
     return buf.ops
 
 
@@ -51,6 +56,7 @@ def execute(printer: Any, ops: list[tuple[str, Any]]) -> None:
             printer.cut()
         else:
             raise ValueError(f"unsupported op: {op}")
+    printer.close()
 
 
 def render_and_execute_template(

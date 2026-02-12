@@ -1,10 +1,8 @@
 {{ p.feed(2) }}
-{{ p.set(align="center", bold=True) }}
-{{ p.text("TODO") }}
-
+{{ p.set(align="center") }}
+{{ p.text(figlet("Tlacuilo", "calvin_s")) }}
 {{ p.feed(1) }}
-{{ p.set(align="left", bold=False) }}
-{{ p.text(todo) }}
-
+{{ p.set(align="left", bold=False, double_width=False, double_height=False) }}
+{{ p.text("- " + todo + "\n") }}
 {{ p.feed(2) }}
 {{ p.cut() }}
