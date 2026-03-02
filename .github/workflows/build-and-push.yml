@@ -5,7 +5,7 @@ on:
     workflow_dispatch:
 
 env:
-    DOCKER_IMAGE: rtuszik/tlacuilo
+    DOCKER_IMAGE: ghcr.io/rtuszik/tlacuilo
 
 jobs:
     build-and-push:
