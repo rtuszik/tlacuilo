@@ -1,14 +1,14 @@
 [project]
 name = "Tlacuilo"
 version = "0.1.0"
-description = "Add your description here"
+description = "ToDo list ESC/POS API for thermal printers"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
   "fastapi[standard]>=0.128.0",
+  "pyfiglet>=1.0.2",
   "python-dotenv>=1.2.1",
   "python-escpos[serial,usb]>=3.1",
-  "pyfiglet>=1.0.2",
 ]
 
 [project.scripts]
