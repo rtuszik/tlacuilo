@@ -56,13 +56,9 @@ ASCII art text. Returns string.
 ## Development
 
 ```
-brew bundle
+uv sync --locked
 ```
 
 ```
 prek install
-```
-
-```
-uv sync --locked
 ```

@@ -13,3 +13,5 @@ PRINTER_PORT = int(os.getenv("PRINTER_PORT", "9100"))
 
 USER_TEMPLATES_DIR = Path("templates")
 BUILTIN_TEMPLATES_DIR = Path("src/tlacuilo/templates/builtin")
+
+API_KEY = os.getenv("API_KEY")
