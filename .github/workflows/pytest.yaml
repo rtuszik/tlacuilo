@@ -20,7 +20,7 @@ jobs:
                   python-version-file: "pyproject.toml"
 
             - name: Install uv
-              uses: astral-sh/setup-uv@v8.1.0
+              uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
               with:
                   enable-cache: true
                   version: 0.11.*
@@ -37,7 +37,7 @@ jobs:
                     | tee pytest-coverage.txt
 
             - name: Pytest coverage comment
-              uses: MishaKav/pytest-coverage-comment@main
+              uses: MishaKav/pytest-coverage-comment@a01708271d42c5703d489b13eb503ba47c01e82a # main
               with:
                   pytest-coverage-path: ./pytest-coverage.txt
                   junitxml-path: ./pytest.xml
