@@ -13,6 +13,14 @@ uv sync
 uv run tlacuilo
 ```
 
+## Configuration
+
+Configuration is done through a `.env` file.
+
+```bash
+cp .env.example .env
+```
+
 ## Templates
 
 Jinja2 templates in `templates/` (user) or `src/tlacuilo/templates/builtin/`.
