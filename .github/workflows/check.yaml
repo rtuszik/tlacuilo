@@ -17,7 +17,7 @@ jobs:
               uses: astral-sh/setup-uv@v9.0.0
               with:
                   enable-cache: true
-                  version: 0.11.*
+                  version: 0.12.*
             - name: Install dependencies
               run: uv sync --locked
             - name: Cache dependencies
@@ -41,7 +41,7 @@ jobs:
               uses: astral-sh/setup-uv@v9.0.0
               with:
                   enable-cache: true
-                  version: 0.11.*
+                  version: 0.12.*
             - name: Restore dependencies
               uses: actions/cache/restore@v6
               with:
@@ -67,7 +67,7 @@ jobs:
               uses: astral-sh/setup-uv@v9.0.0
               with:
                   enable-cache: true
-                  version: 0.11.*
+                  version: 0.12.*
             - name: Restore dependencies
               uses: actions/cache/restore@v6
               with:
@@ -91,7 +91,7 @@ jobs:
               uses: astral-sh/setup-uv@v9.0.0
               with:
                   enable-cache: true
-                  version: 0.11.*
+                  version: 0.12.*
             - name: Restore dependencies
               uses: actions/cache/restore@v6
               with:
