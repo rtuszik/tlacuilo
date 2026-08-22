@@ -2,9 +2,10 @@ import logging
 import os
 
 import uvicorn
-from fastapi import FastAPI
+from fastapi import Depends, FastAPI
 from pydantic import BaseModel
 
+from tlacuilo.api.auth import verify_key
 from tlacuilo.core.config import BUILTIN_TEMPLATES_DIR, USER_TEMPLATES_DIR
 from tlacuilo.core.log_config import LOGGING_CONFIG
 from tlacuilo.printer.print import render_and_execute_template
@@ -20,7 +21,7 @@ class TodoRequest(BaseModel):
     todo: str
 
 
-@app.post("/todo")
+@app.post("/todo", dependencies=[Depends(verify_key)])
 def create_todo(req: TodoRequest):
     log.info("Todo Received")
     printer = get_printer()
